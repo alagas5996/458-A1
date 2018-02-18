@@ -1,12 +1,11 @@
 #include <stdio.h>
-
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <strings.h>
 
 int main(int argc, char **argv) {
-        int   listenfd, connfd, clilen;
+        int listenfd, connfd, clilen;
         struct sockaddr_in servaddr, cliaddr;
         char buff[100];
         time_t ticks;

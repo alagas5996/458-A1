@@ -5,11 +5,11 @@ FILE = -g -std=c++11 -pthread -O2 -Wall -Wextra -Wundef -pedantic -c
 #Compile
 all: telnetserv telnetcli
 
-telnetserv:
-	g++ $(EXEC) telnetserv.o -o telnetserv
+telnetserv: telnetserv.cpp
+	g++ $(EXEC) telnetserv.cpp -o telnetserv
 
-telnetcli:
-	g++ $(FILE) telnetcli.o -o telnetcli
+telnetcli: telnetcli.cpp
+	g++ $(FILE) telnetcli.cpp -o telnetcli
 
 #Test
 test: all
