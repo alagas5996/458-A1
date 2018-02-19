@@ -26,7 +26,7 @@ int main(int argc, char **argv){
         /* Specify server’s IP address and port */
         bzero(&servaddr, sizeof(servaddr));
         servaddr.sin_family = AF_INET;
-        servaddr.sin_port = htons((unsigned short) strtoul(argv[2], NULL, 0)); /* daytime server port */
+        servaddr.sin_port = htons(10000); /* daytime server port */
 
         if(inet_pton(AF_INET, argv[1], &servaddr.sin_addr) <= 0){
 		perror("INET_PTON Error\n"); exit(3);
