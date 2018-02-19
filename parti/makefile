@@ -6,15 +6,21 @@ FILE = -g -std=c++11 -pthread -O2 -Wall -Wextra -Wundef -pedantic -c
 all: telnetserv telnetcli
 
 telnetserv: telnetserv.cpp
-	g++ $(EXEC) telnetserv.cpp -o telnetserv
+	g++ $(EXEC) serEx.cpp -o telnetserv
 
 telnetcli: telnetcli.cpp
-	g++ $(FILE) telnetcli.cpp -o telnetcli
+	g++ $(EXEC) cliEx.cpp -o telnetcli
+
+#git
+git:
+	git add *
+	git commit -m "Testing"
+	git push origin master
 
 #Test
 test: all
-	./telnetserv #<port_number>
-	./telnetcli #<server_machine> <server_port>
+	./telnetserv 8080
+	./telnetcli 198.255.145.243 8080
 
 #Cleanup
 clean:

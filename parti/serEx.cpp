@@ -2,10 +2,15 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <strings.h>
+#include <string.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <time.h>
 
 int main(int argc, char **argv) {
-        int listenfd, connfd, clilen;
+        int listenfd, connfd;
+	socklen_t clilen;
         struct sockaddr_in servaddr, cliaddr;
         char buff[100];
         time_t ticks;
